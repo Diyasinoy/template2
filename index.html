@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Serah & Mathew — Luxury Digital Wedding Invitation</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        'cream-dark': '#F5EFE6',
+                        pink: {
+                            light: '#FFF0F3',
+                            soft: '#F7CAD0',
+                            DEFAULT: '#E5989B',
+                            deep: '#B56576'
+                        },
+                        blue: {
+                            light: '#E8F1F5',
+                            soft: '#BEE1E6',
+                            DEFAULT: '#8ECAE6',
+                            deep: '#457B9D'
+                        },
+                        sage: {
+                            light: '#E8F3EE',
+                            soft: '#89B0AE',
+                            DEFAULT: '#557C72',
+                            dark: '#3D4A41'
+                        },
+                        charcoal: '#2B2328',
+                        'charcoal-soft': '#554A52'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['"Playfair Display"', 'serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Dynamic Fluid Typography & Dynamic Viewport Height */
+        :root {
+            --title-fluid: clamp(1.6rem, 5.8vw, 2.5rem);
+            --subtitle-fluid: clamp(0.85rem, 2.4vw, 1.25rem);
+            --section-title-fluid: clamp(1.6rem, 4vw, 2.5rem);
+        }
+
+        .fluid-title { font-size: var(--title-fluid); }
+        .fluid-subtitle { font-size: var(--subtitle-fluid); }
+        .fluid-section-title { font-size: var(--section-title-fluid); }
+
+        .min-h-dvh {
+            min-height: 100vh;
+            min-height: 100svh;
+            min-height: 100dvh;
+        }
+        .h-dvh {
+            height: 100vh;
+            height: 100svh;
+            height: 100dvh;
+        }
+
+        /* Custom Paper Texture Background */
+        .paper-texture {
+            background-color: #FDFBF7;
+            background-image: radial-gradient(#E5989B 0.35px, transparent 0.35px), radial-gradient(#89B0AE 0.35px, #FDFBF7 0.35px);
+            background-size: 16px 16px;
+            background-position: 0 0, 8px 8px;
+        }
+
+        /* Subtle Luxury Pastel Glass Effect */
+        .glass-card {
+            background: rgba(253, 251, 247, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(247, 202, 208, 0.5);
+        }
+
+        .dark-glass {
+            background: rgba(43, 35, 40, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(247, 202, 208, 0.3);
+        }
+
+        /* Ambient Hero Glow & Shimmer FX */
+        .hero-radial-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(247, 202, 208, 0.35) 0%, rgba(232, 243, 238, 0.25) 50%, rgba(253, 251, 247, 0) 80%);
+        }
+
+        /* Shimmer Overlay on Scratch Container */
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(25deg); }
+            100% { transform: translateX(200%) rotate(25deg); }
+        }
+        .scratch-shimmer-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: rotate(25deg);
+            animation: shimmer 4s infinite linear;
+            pointer-events: none;
+        }
+
+        /* Floating Petal Animation */
+        @keyframes floatPetal {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-70px) rotate(45deg); opacity: 0; }
+        }
+        .floating-petal {
+            position: absolute;
+            pointer-events: none;
+            animation: floatPetal 8s infinite ease-in-out;
+        }
+
+        /* Respect Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .floating-petal, .scratch-shimmer-effect::after, .animate-spin-slow {
+                animation: none !important;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F7CAD0;
+            border-radius: 4px;
+        }
+
+        /* Prevent unwanted iOS auto-zoom on form focus */
+        input, select, textarea {
+            font-size: 16px !important;
+        }
+
+        /* Touch target minimum size utility */
+        .touch-target {
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile Device Experience Container Adjustments */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1618; /* Dark elegant ambient background outside mobile container on desktop */
+            padding: 1rem;
+        }
+
+        /* Mobile App Frame Viewport Lock (Aspect Ratio 9:16 forced for portrait mobile screens) */
+        #app-viewport-container {
+            width: 100%;
+            max-width: 425px; /* Aspect 9:16 ratio scaled for modern mobile screens */
+            aspect-ratio: 9 / 16;
+            margin: 0 auto;
+            position: relative;
+            background-color: #FDFBF7;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 24px;
+            border: 1px solid rgba(247, 202, 208, 0.4);
+        }
+
+        /* Curtain Reveal Effect bounded to mobile frame */
+        .curtain-up {
+            transform: translateY(-100%);
+            transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        /* Scroll Reveal Elements */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-charcoal paper-texture antialiased selection:bg-pink-soft selection:text-charcoal overflow-x-hidden">
+
+    <!-- MOBILE SCREEN VIEWPORT WRAPPER (9:16 Aspect Ratio Frame Container) -->
+    <div id="app-viewport-container" class="relative">
+
+    <!-- AUDIO CONTROLLER (Floating Glass Widget with 44px+ Touch Area) -->
+    <div id="audio-container" class="fixed bottom-4 right-4 z-50 transition-all duration-500 opacity-0 max-w-[425px]">
+        <button id="music-toggle-btn" class="touch-target px-4 py-2.5 rounded-full glass-card shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-soft/60 text-charcoal hover:bg-pink-light group active:scale-95" aria-label="Toggle Background Music">
+            <span class="relative flex h-3 w-3 mr-2">
+              <span id="music-ping" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-DEFAULT opacity-75 hidden"></span>
+              <span id="music-dot" class="relative inline-flex rounded-full h-3 w-3 bg-sage-soft group-hover:bg-pink transition-colors"></span>
+            </span>
+            <i id="music-icon" class="fa-solid fa-music text-xs text-pink-deep group-hover:text-pink transition-colors mr-2"></i>
+            <span id="music-text" class="text-xs uppercase tracking-widest font-semibold font-sans text-charcoal">Music Off</span>
+        </button>
+    </div>
+
+    <!-- 1. OPENING SCREEN - CINEMATIC TOUCH CURTAIN INVITATION -->
+    <section id="opening-curtain" class="absolute inset-0 z-50 flex flex-col items-center justify-between py-6 px-4 bg-charcoal text-cream transition-all duration-1000 overflow-hidden w-full h-full box-border">
+        <!-- Background Image with Romantic Atmosphere -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1920&q=85" alt="Serah & Mathew Wedding Portrait" class="w-full h-full object-cover object-center filter brightness-75 contrast-105" id="curtain-img">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-charcoal/60"></div>
+        </div>
+
+        <!-- Top Header Accent -->
+        <div class="relative z-10 text-center space-y-0.5 mt-2">
+            <div class="inline-block p-0.5">
+                <svg class="w-8 h-8 mx-auto text-pink-soft" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M50 10 C 50 40, 20 50, 10 50 C 20 50, 50 60, 50 90 C 50 60, 80 50, 90 50 C 80 50, 50 40, 50 10 Z" />
+                    <circle cx="50" cy="50" r="4" fill="#89B0AE"/>
+                </svg>
+            </div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-pink-light font-light font-sans">A Celebration of Love</p>
+        </div>
+
+        <!-- Main Invitation Title -->
+        <div class="relative z-10 text-center max-w-3xl px-2 my-auto">
+            <h1 class="font-serif fluid-title tracking-tight text-cream font-light leading-none mb-2 drop-shadow-md">
+                Serah <span class="font-serif italic text-pink-soft font-normal">&amp;</span> Mathew
+            </h1>
+            <div class="w-16 h-[1px] bg-gradient-to-r from-transparent via-pink-soft to-transparent mx-auto my-3"></div>
+            <p class="text-xs text-cream/90 font-sans tracking-widest font-light uppercase">
+                December 18, 2026 &bull; Kochi, Kerala
+            </p>
+        </div>
+
+        <!-- Open Invitation Button -->
+        <div class="relative z-10 text-center space-y-1.5 mb-4 w-full max-w-xs">
+            <button id="open-invitation-btn" class="w-full touch-target group relative inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-pink-soft/80 bg-pink-soft/20 text-cream font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 active:scale-95 shadow-xl">
+                <span class="relative z-10 flex items-center justify-center gap-2.5 font-semibold text-cream">
+                    <span>Open Invitation</span>
+                    <i class="fa-solid fa-envelope-open text-xs text-pink-soft group-hover:translate-x-0.5 transition-transform"></i>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <!-- MAIN INVITATION CONTENT WRAPPER -->
+    <main id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- 2. WELCOME SECTION (HERO - ENHANCED VISUAL RICHNESS & 9:16 BALANCED RATIO) -->
+        <section id="welcome" class="relative pt-6 pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-start items-center box-border overflow-hidden hero-radial-glow reveal-on-scroll space-y-4">
+            
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <img src="/img/bg.jpeg" alt="Wedding Floral Background" class="w-full h-full object-cover object-center opacity-60 filter blur-[0.5px]" onError="this.style.display='none'">
+                <div class="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/40 to-cream/40"></div>
+            </div>
+
+            <!-- Delicate Botanical Corner Flourish SVG Accents -->
+            <div class="absolute top-2 left-2 w-12 h-12 text-pink-soft/50 pointer-events-none z-10">
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M10,10 Q40,10 50,50 Q10,40 10,10 Z"/>
+                    <path d="M10,10 C20,30 30,20 40,25"/>
+                    <circle cx="10" cy="10" r="3" fill="#E5989B"/>
+                </svg>
+            </div>
+            <div class="absolute top-2 right-2 w-12 h-12 text-pink-soft/50 pointer-events-none transform scale-x-[-1]">
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M10,10 Q40,10 50,50 Q10,40 10,10 Z"/>
+                    <path d="M10,10 C20,30 30,20 40,25"/>
+                    <circle cx="10" cy="10" r="3" fill="#E5989B"/>
+                </svg>
+            </div>
+
+            <!-- Header Motif Symbol -->
+            <div class="relative pt-2 flex-shrink-0 z-10">
+                <div class="w-10 h-10 mx-auto text-sage relative flex items-center justify-center">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-full">
+                        <path d="M32 4C32 20 12 32 4 32C20 32 32 52 32 60C32 44 52 32 60 32C44 32 32 12 32 4Z"/>
+                        <circle cx="32" cy="32" r="4" fill="#F7CAD0"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Introductory Text -->
+            <div class="flex-shrink-0 z-10">
+                <p class="text-[10px] uppercase tracking-[0.25em] text-pink-deep font-sans font-extrabold drop-shadow-sm">Together With Their Families</p>
+            </div>
+            
+            <!-- Couple's Names -->
+            <div class="flex-shrink-0 z-10">
+                <h2 class="font-serif fluid-section-title text-charcoal font-semibold leading-tight tracking-tight drop-shadow-sm">
+                    Serah Elizabeth <br/><span class="font-serif italic text-pink-deep font-bold">&amp;</span> Mathew Thomas
+                </h2>
+            </div>
+
+            <!-- Refined Botanical Divider Ornament -->
+            <div class="flex items-center justify-center gap-2 w-full max-w-[180px] flex-shrink-0 z-10">
+                <div class="h-[1px] bg-gradient-to-r from-transparent via-pink-soft to-transparent flex-1"></div>
+                <span class="text-pink text-[11px]"><i class="fa-solid fa-seedling"></i></span>
+                <div class="h-[1px] bg-gradient-to-r from-transparent via-pink-soft to-transparent flex-1"></div>
+            </div>
+
+            <!-- Invitation Quote -->
+            <div class="flex-shrink-0 max-w-xs z-10">
+                <p class="font-serif text-[14px] text-charcoal font-medium italic leading-relaxed px-1 drop-shadow-sm">
+                    “Two lives, two hearts, joined in love forever. We invite you to share in our joy as we begin our new journey together.”
+                </p>
+            </div>
+
+            <!-- Interactive Scratch Card Date Section -->
+            <div class="w-full flex flex-col items-center justify-center space-y-1.5 flex-shrink-0 z-10 my-2">
+                <div class="flex items-center gap-1.5 text-[9.5px] uppercase tracking-[0.2em] text-pink-deep font-sans font-bold">
+                    <i class="fa-solid fa-sparkles text-pink animate-pulse"></i>
+                    <span>Scratch Below To Reveal Date</span>
+                    <i class="fa-solid fa-sparkles text-pink animate-pulse"></i>
+                </div>
+
+                <!-- Scratch Card Wrapper with Shimmer Border -->
+                <div class="relative w-full max-w-[280px] h-20 rounded-xl overflow-hidden shadow-md border-2 border-pink-soft/80 bg-gradient-to-br from-cream via-pink-light to-blue-light flex items-center justify-center p-2 select-none scratch-shimmer-effect">
+                    <!-- Revealed Date Content Below Canvas -->
+                    <div class="text-center space-y-0.5">
+                        <p class="font-serif text-lg font-bold text-charcoal tracking-wide drop-shadow-sm leading-tight">
+                            DECEMBER 18, 2026
+                        </p>
+                        <p class="text-[9px] font-sans uppercase tracking-[0.2em] font-semibold text-pink-deep">
+                            Kochi, Kerala &bull; Save The Date
+                        </p>
+                    </div>
+
+                    <!-- Interactive Scratch Canvas Overlay -->
+                    <canvas id="scratch-canvas" class="absolute inset-0 w-full h-full cursor-pointer touch-none transition-opacity duration-500"></canvas>
+                </div>
+
+                <div class="flex items-center gap-1 pt-0.5">
+                    <button id="reset-scratch-btn" class="touch-target text-[9.5px] uppercase tracking-widest font-sans font-semibold text-charcoal-soft hover:text-pink-deep transition-colors py-0.5">
+                        <i class="fa-solid fa-rotate-left mr-1"></i> Scratch Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Highlight Badges for 9:16 layout enrichment -->
+            <div class="w-full max-w-xs grid grid-cols-2 gap-2 pt-1 z-10">
+                <div class="glass-card rounded-xl p-2.5 text-center border border-pink-soft/40">
+                    <i class="fa-solid fa-church text-pink-deep text-xs mb-1 block"></i>
+                    <p class="text-[9px] uppercase tracking-wider text-charcoal font-semibold font-sans">10:30 AM IST</p>
+                    <p class="text-[10px] font-serif text-charcoal-soft italic">St. George Basilica</p>
+                </div>
+                <div class="glass-card rounded-xl p-2.5 text-center border border-blue-soft/40">
+                    <i class="fa-solid fa-champagne-glasses text-blue-deep text-xs mb-1 block"></i>
+                    <p class="text-[9px] uppercase tracking-wider text-charcoal font-semibold font-sans">06:00 PM IST</p>
+                    <p class="text-[10px] font-serif text-charcoal-soft italic">Grand Hyatt Bolgatty</p>
+                </div>
+            </div>
+
+            <!-- Quick RSVP Callout Button -->
+            <div class="pt-2 z-10 w-full max-w-xs">
+                <a href="#rsvp" class="touch-target w-full py-3 rounded-full bg-pink-deep text-cream font-sans text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center gap-2 shadow-md hover:bg-pink transition-all active:scale-95">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Quick RSVP</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- REVEAL CELEBRATION POPUP MODAL -->
+        <div id="scratch-popup" class="fixed inset-0 z-50 bg-charcoal/80 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-all duration-500">
+            <!-- Confetti Canvas -->
+            <canvas id="confetti-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+            
+            <div class="glass-card max-w-xs w-full rounded-3xl p-6 border-2 border-pink-soft text-center shadow-2xl relative z-20 transform scale-90 transition-transform duration-300" id="scratch-popup-card">
+                <div class="w-14 h-14 bg-pink-light text-pink-deep rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner mb-4 animate-bounce">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.3em] font-sans font-bold text-pink-deep block mb-1">Save The Date Locked!</span>
+                <h3 class="font-serif text-2xl text-charcoal font-bold mb-2">December 18, 2026</h3>
+                <p class="font-serif italic text-charcoal-soft text-sm mb-6">
+                    “We cannot wait to celebrate our special day with you in Kochi, Kerala!”
+                </p>
+                
+                <div class="space-y-3">
+                    <button id="close-scratch-popup" class="touch-target w-full py-3.5 rounded-full bg-pink-deep text-cream text-xs uppercase tracking-[0.2em] font-semibold hover:bg-pink transition-all duration-300 shadow-md active:scale-95">
+                        Add to Calendar / Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. OUR STORY SECTION -->
+        <section id="story" class="py-12 px-4 bg-blue-light/30 border-y border-pink-soft/20 reveal-on-scroll">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-[0.3em] text-blue-deep font-sans font-semibold">Chapter One</span>
+                    <h2 class="font-serif fluid-section-title text-charcoal mt-1">Our Story</h2>
+                    <div class="w-12 h-[1px] bg-pink-soft mx-auto mt-3"></div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 items-center">
+                    <!-- Photo Frame -->
+                    <div class="relative group">
+                        <div class="absolute -inset-2 rounded-2xl border border-pink-soft/60 transform -rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+                        <div class="relative overflow-hidden rounded-xl shadow-lg aspect-[4/3] bg-pink-light/30">
+                            <img src="/img/photo.avif" alt="Serah & Mathew First Moment" class="w-full h-full object-cover filter contrast-[1.02] hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                    <!-- Narrative Text -->
+                    <div class="space-y-4">
+                        <h3 class="font-serif text-2xl text-charcoal font-light">From a serendipitous smile to forever...</h3>
+                        <p class="text-charcoal-soft leading-relaxed font-sans text-sm font-light">
+                            What started as a quiet friendship quickly blossomed into a deep bond anchored by laughter, shared values, and mutual respect. Over coffee conversations, coastal drives, and peaceful sunsets, Serah and Mathew found a sanctuary in each other.
+                        </p>
+                        <p class="text-charcoal-soft leading-relaxed font-sans text-sm font-light">
+                            Today, as we prepare to walk down the aisle surrounded by the warmth of our closest family and dear friends, we look forward to embarking on a lifetime of shared adventures, cherished traditions, and unconditional love.
+                        </p>
+
+                        <div class="pt-2 flex items-center gap-4 text-pink">
+                            <div class="h-[1px] w-12 bg-pink-soft"></div>
+                            <i class="fa-solid fa-heart text-xs text-pink-deep"></i>
+                            <div class="h-[1px] w-12 bg-pink-soft"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. WEDDING EVENTS - INTERACTIVE TOUCH TABS -->
+        <section id="schedule" class="py-12 px-4 max-w-5xl mx-auto reveal-on-scroll">
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase tracking-[0.3em] text-sage-dark font-sans font-semibold">Celebration Details</span>
+                <h2 class="font-serif fluid-section-title text-charcoal mt-1">Wedding Schedule</h2>
+                <p class="text-xs font-sans text-charcoal-soft mt-2">Join Serah &amp; Mathew across three days of heartfelt celebrations</p>
+            </div>
+
+            <!-- Tab Buttons Header (Scrollable horizontal pills on mobile) -->
+            <div class="flex justify-start border-b border-pink-soft/30 mb-8 overflow-x-auto pb-3 pt-1 scrollbar-none gap-2 px-1">
+                <button class="event-tab-btn touch-target flex-shrink-0 active px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.15em] font-sans font-semibold transition-all duration-300 bg-pink-light text-pink-deep border border-pink-soft shadow-sm" data-tab="mehendi">
+                    Mehendi
+                </button>
+                <button class="event-tab-btn touch-target flex-shrink-0 px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.15em] font-sans font-semibold transition-all duration-300 text-charcoal-soft hover:text-charcoal hover:bg-cream-dark" data-tab="sangeet">
+                    Sangeet
+                </button>
+                <button class="event-tab-btn touch-target flex-shrink-0 px-4 py-2 rounded-full text-[11px] uppercase tracking-[0.15em] font-sans font-semibold transition-all duration-300 text-charcoal-soft hover:text-charcoal hover:bg-cream-dark" data-tab="pheras">
+                    Matrimony &amp; Reception
+                </button>
+            </div>
+
+            <!-- Tab Content Cards -->
+            <div id="tab-contents">
+                <!-- TAB 1: MEHENDI -->
+                <div id="tab-mehendi" class="event-card transition-all duration-500">
+                    <div class="glass-card rounded-2xl p-6 border border-pink-soft/50 shadow-sm flex flex-col gap-6">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-sage-light rounded-full text-sage-dark text-[11px] uppercase tracking-widest font-semibold font-sans border border-sage-soft/30">
+                                Wednesday, Dec 16, 2026
+                            </div>
+                            <h3 class="font-serif text-2xl text-charcoal">The Mehendi Ceremony</h3>
+                            <p class="text-xs text-charcoal-soft font-sans leading-relaxed">
+                                An intimate afternoon filled with intricate henna artistry, sweet traditional melodies, pastel floral accents, and cheerful blessings to begin Serah &amp; Mathew's celebration.
+                            </p>
+                            <div class="space-y-2 pt-2 text-xs font-sans text-charcoal">
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-regular fa-clock text-pink-deep w-4"></i>
+                                    <span>4:00 PM onwards</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-solid fa-location-dot text-pink-deep w-4"></i>
+                                    <span>The Garden Villa, Bolgatty Island, Kochi</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-solid fa-shirt text-pink-deep w-4"></i>
+                                    <span>Dress Code: Soft Pastel Florals &amp; Gentle Greens</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="rounded-xl overflow-hidden aspect-video shadow-md border border-pink-soft/30">
+                                <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=600&q=80" alt="Mehendi Decor" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: SANGEET -->
+                <div id="tab-sangeet" class="event-card hidden transition-all duration-500">
+                    <div class="glass-card rounded-2xl p-6 border border-blue-soft/50 shadow-sm flex flex-col gap-6">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-blue-light rounded-full text-blue-deep text-[11px] uppercase tracking-widest font-semibold font-sans border border-blue-soft/30">
+                                Thursday, Dec 17, 2026
+                            </div>
+                            <h3 class="font-serif text-2xl text-charcoal">Sangeet &amp; Musical Evening</h3>
+                            <p class="text-xs text-charcoal-soft font-sans leading-relaxed">
+                                An enchanting evening of musical performances, dance routines, toasts, and dancing under twinkling fairy lights as both families come together.
+                            </p>
+                            <div class="space-y-2 pt-2 text-xs font-sans text-charcoal">
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-regular fa-clock text-blue-deep w-4"></i>
+                                    <span>6:30 PM onwards</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-solid fa-location-dot text-blue-deep w-4"></i>
+                                    <span>Grand Ballroom, Marriott Hotel, Edappally, Kochi</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-solid fa-shirt text-blue-deep w-4"></i>
+                                    <span>Dress Code: Elegant Cocktail / Pastel Tuxedos &amp; Gowns</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="rounded-xl overflow-hidden aspect-video shadow-md border border-blue-soft/30">
+                                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" alt="Sangeet Celebration" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: PHERAS / WEDDING -->
+                <div id="tab-pheras" class="event-card hidden transition-all duration-500">
+                    <div class="glass-card rounded-2xl p-6 border border-sage-soft/50 shadow-sm flex flex-col gap-6">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-pink-light rounded-full text-pink-deep text-[11px] uppercase tracking-widest font-semibold font-sans border border-pink-soft/30">
+                                Friday, Dec 18, 2026
+                            </div>
+                            <h3 class="font-serif text-2xl text-charcoal">Holy Matrimony &amp; Grand Reception</h3>
+                            <p class="text-xs text-charcoal-soft font-sans leading-relaxed">
+                                The sacred wedding ceremony followed by a grand editorial dinner reception surrounded by romantic pastel botanical setups and acoustic live music.
+                            </p>
+                            <div class="space-y-2 pt-2 text-xs font-sans text-charcoal">
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-regular fa-clock text-sage-dark w-4"></i>
+                                    <span>10:30 AM (Church) &bull; 6:00 PM (Reception)</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-solid fa-location-dot text-sage-dark w-4"></i>
+                                    <span>St. George Basilica &amp; Grand Hyatt Water Front, Bolgatty</span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fa-solid fa-shirt text-sage-dark w-4"></i>
+                                    <span>Dress Code: Formal / Soft Rose, Powder Blue or Cream</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="rounded-xl overflow-hidden aspect-video shadow-md border border-sage-soft/30">
+                                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Wedding Ceremony" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. WEDDING COUNTDOWN TIMER (1 SINGLE HORIZONTAL ROW LAYOUT) -->
+        <section id="countdown" class="py-6 px-3 bg-charcoal text-cream relative overflow-hidden reveal-on-scroll">
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <span class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-pink-soft font-sans font-medium">Counting Down To Forever</span>
+                <h2 class="font-serif text-xl sm:text-2xl font-light mt-1 mb-5 text-cream px-2">Until Serah &amp; Mathew Say “I Do”</h2>
+
+                <!-- Single Horizontal Row Numerals Grid: 4 Equal Columns -->
+                <div class="grid grid-cols-4 gap-1.5 sm:gap-3 max-w-xl mx-auto w-full box-border">
+                    <!-- Days -->
+                    <div class="dark-glass py-2.5 px-1 sm:p-3 rounded-xl text-center min-w-0 box-border">
+                        <span id="days" class="font-serif text-xl sm:text-3xl text-pink-soft font-light block leading-none truncate">00</span>
+                        <span class="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-[0.2em] text-cream/70 font-sans mt-1 block truncate">Days</span>
+                    </div>
+                    <!-- Hours -->
+                    <div class="dark-glass py-2.5 px-1 sm:p-3 rounded-xl text-center min-w-0 box-border">
+                        <span id="hours" class="font-serif text-xl sm:text-3xl text-blue-soft font-light block leading-none truncate">00</span>
+                        <span class="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-[0.2em] text-cream/70 font-sans mt-1 block truncate">Hours</span>
+                    </div>
+                    <!-- Minutes -->
+                    <div class="dark-glass py-2.5 px-1 sm:p-3 rounded-xl text-center min-w-0 box-border">
+                        <span id="minutes" class="font-serif text-xl sm:text-3xl text-sage-soft font-light block leading-none truncate">00</span>
+                        <span class="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-[0.2em] text-cream/70 font-sans mt-1 block truncate">Mins</span>
+                    </div>
+                    <!-- Seconds -->
+                    <div class="dark-glass py-2.5 px-1 sm:p-3 rounded-xl text-center min-w-0 box-border">
+                        <span id="seconds" class="font-serif text-xl sm:text-3xl text-pink-light font-light block leading-none truncate">00</span>
+                        <span class="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-[0.2em] text-cream/70 font-sans mt-1 block truncate">Secs</span>
+                    </div>
+                </div>
+
+                <div id="countdown-expired-msg" class="hidden font-serif text-lg text-pink-soft mt-4">
+                    Today is the day! Serah &amp; Mathew are celebrating their love!
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PHOTO GALLERY SECTION -->
+        <section id="gallery" class="py-12 px-4 max-w-6xl mx-auto reveal-on-scroll">
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase tracking-[0.3em] text-pink-deep font-sans font-semibold">Memories</span>
+                <h2 class="font-serif fluid-section-title text-charcoal mt-1">Editorial Gallery</h2>
+                <div class="w-12 h-[1px] bg-pink-soft mx-auto mt-3"></div>
+            </div>
+
+            <!-- Responsive Grid Gallery: Strictly 2 columns per row across all mobile viewports -->
+            <div class="grid grid-cols-2 gap-3">
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-img="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85" data-caption="Serah & Mathew — Sunset Moments">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Gallery Photo 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p class="text-cream font-serif text-xs">Sunset Promenade</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-img="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" data-caption="Serah & Mathew — Quiet Smiles">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Gallery Photo 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p class="text-cream font-serif text-xs">Gentle Whispers</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-img="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85" data-caption="A Promise of Forever">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Gallery Photo 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p class="text-cream font-serif text-xs">A Promise of Forever</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-img="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=85" data-caption="Under the Palms">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Gallery Photo 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p class="text-cream font-serif text-xs">Under the Palms</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-img="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=85" data-caption="Pastel Dreams">
+                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&q=80" alt="Gallery Photo 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p class="text-cream font-serif text-xs">Editorial Moments</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-img="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=85" data-caption="Joyful Radiance">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80" alt="Gallery Photo 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p class="text-cream font-serif text-xs">Joyful Radiance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL WITH MOBILE TOUCH CONTROLS -->
+        <div id="gallery-lightbox" class="fixed inset-0 z-50 bg-charcoal/95 backdrop-blur-md hidden flex flex-col items-center justify-between p-4 transition-opacity duration-300">
+            <div class="w-full flex justify-end p-2">
+                <button id="close-lightbox" class="touch-target p-3 text-cream text-2xl hover:text-pink-soft transition-colors" aria-label="Close Gallery Lightbox">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="max-w-4xl max-h-[75vh] my-auto relative p-2 flex items-center justify-center">
+                <img id="lightbox-img" src="" alt="Gallery Lightbox" class="max-h-[65vh] w-auto mx-auto rounded-lg shadow-2xl object-contain">
+            </div>
+
+            <p id="lightbox-caption" class="text-center text-cream font-serif text-base font-light pb-4"></p>
+        </div>
+
+        <!-- 7. VENUE & DIRECTIONS SECTION -->
+        <section id="venue" class="py-12 px-4 bg-sage-light/30 border-t border-pink-soft/20 reveal-on-scroll">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-[0.3em] text-sage-dark font-sans font-semibold">Location</span>
+                    <h2 class="font-serif fluid-section-title text-charcoal mt-1">Venue &amp; Directions</h2>
+                    <div class="w-12 h-[1px] bg-pink-soft mx-auto mt-3"></div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 items-stretch">
+                    <!-- Venue Card 1: Church -->
+                    <div class="glass-card rounded-2xl p-6 border border-pink-soft/50 flex flex-col justify-between shadow-sm">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-full bg-pink-light flex items-center justify-center text-pink-deep">
+                                <i class="fa-solid fa-church text-sm"></i>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-widest text-pink-deep font-semibold font-sans">The Nuptial Ceremony</span>
+                            <h3 class="font-serif text-2xl text-charcoal">St. George Basilica</h3>
+                            <p class="text-xs text-charcoal-soft font-sans leading-relaxed">
+                                Church Road, Edappally, Kochi, Kerala 682024
+                            </p>
+                            <p class="text-xs text-blue-deep uppercase tracking-wider font-sans font-medium">Time: 10:30 AM IST</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-pink-soft/20">
+                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJHVkzz2YGCDsRYkcRot_zeUo" target="_blank" rel="noopener noreferrer" class="touch-target inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-pink-deep hover:text-pink transition-colors font-sans">
+                                <span>Get Directions</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Venue Card 2: Reception -->
+                    <div class="glass-card rounded-2xl p-6 border border-blue-soft/50 flex flex-col justify-between shadow-sm">
+                        <div class="space-y-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-light flex items-center justify-center text-blue-deep">
+                                <i class="fa-solid fa-champagne-glasses text-sm"></i>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-widest text-blue-deep font-semibold font-sans">Grand Reception</span>
+                            <h3 class="font-serif text-2xl text-charcoal">Grand Hyatt Kochi Bolgatty</h3>
+                            <p class="text-xs text-charcoal-soft font-sans leading-relaxed">
+                                Mulavukad, Bolgatty Island, Kochi, Kerala 682504
+                            </p>
+                            <p class="text-xs text-blue-deep uppercase tracking-wider font-sans font-medium">Time: 6:00 PM IST Onwards</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-blue-soft/20">
+                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJbRITI6QSCDsR6Dnl6E6FiUA" target="_blank" rel="noopener noreferrer" class="touch-target inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-blue-deep hover:text-blue transition-colors font-sans">
+                                <span>Get Directions</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. RSVP SECTION (TOUCH OPTIMIZED FORM) -->
+        <section id="rsvp" class="py-12 px-4 max-w-3xl mx-auto reveal-on-scroll">
+            <div class="glass-card rounded-2xl p-6 border border-pink-soft/60 shadow-xl relative overflow-hidden">
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-[0.35em] text-pink-deep font-sans font-semibold">Kindly Respond</span>
+                    <h2 class="font-serif fluid-section-title text-charcoal mt-1">RSVP</h2>
+                    <p class="text-xs text-charcoal-soft font-sans mt-2">Please reply by November 20, 2026</p>
+                    <div class="w-12 h-[1px] bg-pink-soft mx-auto mt-3"></div>
+                </div>
+
+                <form id="rsvp-form" class="space-y-5">
+                    <div>
+                        <label for="guest-name" class="block text-xs uppercase tracking-widest text-charcoal font-semibold font-sans mb-2">Full Name *</label>
+                        <input type="text" id="guest-name" required placeholder="e.g. Eleanor Vance" class="w-full px-4 py-3.5 rounded-xl bg-cream/90 border border-pink-soft/50 focus:border-pink-deep focus:ring-1 focus:ring-pink-deep outline-none text-base font-sans transition-all">
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-5">
+                        <div>
+                            <label for="guest-email" class="block text-xs uppercase tracking-widest text-charcoal font-semibold font-sans mb-2">Email or Phone *</label>
+                            <input type="text" id="guest-email" required placeholder="email@example.com / +91..." class="w-full px-4 py-3.5 rounded-xl bg-cream/90 border border-pink-soft/50 focus:border-pink-deep focus:ring-1 focus:ring-pink-deep outline-none text-base font-sans transition-all">
+                        </div>
+                        <div>
+                            <label for="guest-count" class="block text-xs uppercase tracking-widest text-charcoal font-semibold font-sans mb-2">Number of Guests *</label>
+                            <select id="guest-count" class="w-full px-4 py-3.5 rounded-xl bg-cream/90 border border-pink-soft/50 focus:border-pink-deep focus:ring-1 focus:ring-pink-deep outline-none text-base font-sans transition-all">
+                                <option value="1">1 Person</option>
+                                <option value="2">2 Persons</option>
+                                <option value="3">3 Persons</option>
+                                <option value="4">4+ Persons</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-charcoal font-semibold font-sans mb-2">Attendance Confirmation *</label>
+                        <div class="grid grid-cols-1 gap-3">
+                            <label class="touch-target w-full flex items-center justify-center p-3.5 rounded-xl border border-pink-soft/50 cursor-pointer bg-cream/60 hover:bg-pink-light/60 transition-all has-[:checked]:bg-pink-light has-[:checked]:text-pink-deep has-[:checked]:border-pink-deep text-xs font-sans uppercase tracking-wider font-semibold active:scale-98">
+                                <input type="radio" name="attendance" value="accept" checked class="hidden">
+                                <span>Joyfully Accepts</span>
+                            </label>
+                            <label class="touch-target w-full flex items-center justify-center p-3.5 rounded-xl border border-pink-soft/50 cursor-pointer bg-cream/60 hover:bg-pink-light/60 transition-all has-[:checked]:bg-pink-light has-[:checked]:text-pink-deep has-[:checked]:border-pink-deep text-xs font-sans uppercase tracking-wider font-semibold active:scale-98">
+                                <input type="radio" name="attendance" value="decline" class="hidden">
+                                <span>Regretfully Declines</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="dietary" class="block text-xs uppercase tracking-widest text-charcoal font-semibold font-sans mb-2">Dietary Preferences</label>
+                        <input type="text" id="dietary" placeholder="e.g. Vegetarian, Gluten-free, Allergies..." class="w-full px-4 py-3.5 rounded-xl bg-cream/90 border border-pink-soft/50 focus:border-pink-deep focus:ring-1 focus:ring-pink-deep outline-none text-base font-sans transition-all">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-xs uppercase tracking-widest text-charcoal font-semibold font-sans mb-2">Personal Message to Serah &amp; Mathew</label>
+                        <textarea id="message" rows="3" placeholder="Share your warm wishes..." class="w-full px-4 py-3.5 rounded-xl bg-cream/90 border border-pink-soft/50 focus:border-pink-deep focus:ring-1 focus:ring-pink-deep outline-none text-base font-sans transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" id="rsvp-submit-btn" class="touch-target w-full py-4 rounded-xl bg-pink-deep text-cream text-xs uppercase tracking-[0.2em] font-semibold hover:bg-pink transition-all duration-300 shadow-md active:scale-98">
+                        Send Response
+                    </button>
+                </form>
+
+                <!-- Success Confirmation Box -->
+                <div id="rsvp-success" class="hidden text-center py-8 space-y-4">
+                    <div class="w-16 h-16 bg-sage-light text-sage-dark rounded-full flex items-center justify-center mx-auto text-2xl">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-3xl text-charcoal">Response Received!</h3>
+                    <p class="text-sm font-sans text-charcoal-soft max-w-md mx-auto">
+                        Thank you for responding. We are thrilled to share this special moment with you!
+                    </p>
+                    <div class="flex flex-col gap-3 pt-2">
+                        <button id="view-greeting-btn" class="touch-target px-6 py-2.5 rounded-full bg-pink-deep text-cream text-xs uppercase tracking-widest font-sans font-semibold hover:bg-pink transition-colors shadow-sm">
+                            <i class="fa-solid fa-envelope-open-text mr-2"></i> View Greeting Message
+                        </button>
+                        <button id="rsvp-reset-btn" class="touch-target px-6 py-2.5 rounded-full border border-pink-soft text-xs uppercase tracking-widest font-sans font-semibold text-charcoal hover:bg-pink-light">
+                            Edit Response
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Greeting Popup Modal after RSVP -->
+        <div id="greeting-modal" class="fixed inset-0 z-50 bg-charcoal/80 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-all duration-500">
+            <div id="greeting-modal-card" class="glass-card max-w-xs w-full rounded-3xl p-6 border-2 border-pink-soft text-center shadow-2xl relative z-20 transform scale-90 transition-transform duration-300">
+                <div class="w-14 h-14 bg-pink-light text-pink-deep rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner mb-4 animate-bounce">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.3em] font-sans font-bold text-pink-deep block mb-1">Warm Greetings &amp; Blessings</span>
+                <h3 id="greeting-title" class="font-serif text-2xl text-charcoal font-bold mb-3">Dear Guest,</h3>
+                <p id="greeting-message" class="font-serif italic text-charcoal-soft text-sm mb-6 leading-relaxed">
+                    “We are beyond delighted to receive your response. Your love and presence mean the world to us!”
+                </p>
+                
+                <button id="close-greeting-modal" class="touch-target w-full py-3.5 rounded-full bg-pink-deep text-cream text-xs uppercase tracking-[0.2em] font-semibold hover:bg-pink transition-all duration-300 shadow-md active:scale-95">
+                    Continue & View Details
+                </button>
+            </div>
+        </div>
+
+        <!-- 9. GREETINGS FROM THE FAMILIES SECTION -->
+        <section id="family-greetings" class="py-12 px-4 max-w-5xl mx-auto reveal-on-scroll">
+            <div class="dark-glass rounded-3xl p-6 border border-pink-soft/40 shadow-2xl text-center space-y-6 relative overflow-hidden text-cream">
+                <!-- Background decorative glow -->
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-pink-deep/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-sage-soft/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="w-12 h-12 bg-pink-soft/10 text-pink-soft rounded-full flex items-center justify-center mx-auto text-xl border border-pink-soft/30 shadow-lg">
+                    <i class="fa-solid fa-hands-holding-heart"></i>
+                </div>
+
+                <span class="text-[11px] uppercase tracking-[0.3em] font-sans font-semibold text-pink-soft block">With Heartfelt Gratitude &amp; Prayers</span>
+
+                <h3 class="font-serif text-2xl text-cream font-light">From The Elizabeth &amp; Thomas Families</h3>
+
+                <div class="w-16 h-[1px] bg-gradient-to-r from-transparent via-pink-soft to-transparent mx-auto my-4"></div>
+
+                <p class="font-serif italic text-cream/90 text-base leading-relaxed max-w-3xl mx-auto font-light">
+                    “As Serah and Mathew step forward hand in hand into this sacred union, our families unite in giving thanks for your endless love, prayers, and cherished friendship. May our hearts be filled with lasting joy as we celebrate the promise of their forever in Kochi.”
+                </p>
+
+                <div class="pt-6 border-t border-cream/10 text-[10px] font-sans uppercase tracking-[0.2em] text-pink-light font-medium">
+                    With Warmest Regards &amp; Eternal Blessings
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-10 px-6 text-center border-t border-pink-soft/30 bg-cream-dark/30 text-charcoal-soft text-xs font-sans space-y-3">
+            <p class="font-serif text-2xl text-charcoal">Serah &amp; Mathew</p>
+            <p class="uppercase tracking-widest text-[10px]">December 18, 2026 &bull; Kochi, Kerala</p>
+            <p class="text-[10px] text-charcoal-soft/70">Designed with Love &amp; Elegance</p>
+        </footer>
+    </main>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('app-viewport-container');
+
+            // --- 1. CURTAIN REVEAL CONTROLLER ---
+            const curtain = document.getElementById('opening-curtain');
+            const mainContent = document.getElementById('main-content');
+            const openBtn = document.getElementById('open-invitation-btn');
+            const audioContainer = document.getElementById('audio-container');
+
+            if (openBtn) {
+                openBtn.addEventListener('click', function() {
+                    if (curtain) curtain.classList.add('curtain-up');
+                    if (mainContent) mainContent.classList.remove('opacity-0');
+                    if (audioContainer) audioContainer.classList.remove('opacity-0');
+                    
+                    // Initialize background synth melody on first tap
+                    if (!audioCtx) {
+                        initAudioSynthesizer();
+                    }
+                    toggleMusic(true);
+
+                    setTimeout(() => {
+                        if (curtain) curtain.style.display = 'none';
+                        handleScrollReveal();
+                    }, 1000);
+                });
+            }
+
+            // --- 3. EVENT TABS CONTROLLER ---
+            const tabBtns = document.querySelectorAll('.event-tab-btn');
+            const tabContents = {
+                'mehendi': document.getElementById('tab-mehendi'),
+                'sangeet': document.getElementById('tab-sangeet'),
+                'pheras': document.getElementById('tab-pheras')
+            };
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const selectedTab = this.getAttribute('data-tab');
+
+                    // Reset buttons
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-pink-light', 'text-pink-deep', 'border', 'border-pink-soft', 'shadow-sm');
+                        b.classList.add('text-charcoal-soft');
+                    });
+
+                    // Activate clicked button
+                    this.classList.add('active', 'bg-pink-light', 'text-pink-deep', 'border', 'border-pink-soft', 'shadow-sm');
+                    this.classList.remove('text-charcoal-soft');
+
+                    // Hide all tabs
+                    Object.values(tabContents).forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // Show active tab
+                    if (tabContents[selectedTab]) {
+                        tabContents[selectedTab].classList.remove('hidden');
+                    }
+                });
+            });
+
+            // --- 4. COUNTDOWN TIMER ---
+            const weddingDate = new Date('December 18, 2026 10:30:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance < 0) {
+                    document.getElementById('countdown-expired-msg').classList.remove('hidden');
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // --- 5. GALLERY LIGHTBOX CONTROLLER ---
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('gallery-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeLightbox = document.getElementById('close-lightbox');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-img');
+                    const caption = this.getAttribute('data-caption');
+
+                    lightboxImg.src = imgSrc;
+                    lightboxCaption.innerText = caption;
+                    lightbox.classList.remove('hidden');
+                });
+            });
+
+            closeLightbox.addEventListener('click', function() {
+                lightbox.classList.add('hidden');
+            });
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox || e.target === lightboxImg) {
+                    lightbox.classList.add('hidden');
+                }
+            });
+
+            // --- 6. RSVP FORM LOGIC WITH LOCALSTORAGE & GREETINGS ---
+            const rsvpForm = document.getElementById('rsvp-form');
+            const rsvpSuccess = document.getElementById('rsvp-success');
+            const rsvpResetBtn = document.getElementById('rsvp-reset-btn');
+            const viewGreetingBtn = document.getElementById('view-greeting-btn');
+            const greetingModal = document.getElementById('greeting-modal');
+            const greetingModalCard = document.getElementById('greeting-modal-card');
+            const greetingTitle = document.getElementById('greeting-title');
+            const greetingMessage = document.getElementById('greeting-message');
+            const closeGreetingModal = document.getElementById('close-greeting-modal');
+
+            function showGreetingModal(name, attendance) {
+                greetingTitle.innerText = `Dear ${name || 'Guest'},`;
+                if (attendance === 'accept') {
+                    greetingMessage.innerText = `“We are beyond delighted to know you will be joining us in Kochi to celebrate our special day! Your love, warm wishes, and presence will make our wedding truly unforgettable.”`;
+                } else {
+                    greetingMessage.innerText = `“Thank you so much for taking the time to send your warm wishes. You will be missed in Kochi, but we carry your love and blessings with us in our hearts!”`;
+                }
+
+                greetingModal.classList.remove('hidden');
+                setTimeout(() => {
+                    greetingModalCard.classList.remove('scale-90');
+                    greetingModalCard.classList.add('scale-100');
+                }, 50);
+
+                playCelebrationChime();
+            }
+
+            const savedRSVP = localStorage.getItem('serah_mathew_rsvp');
+            if (savedRSVP) {
+                rsvpForm.classList.add('hidden');
+                rsvpSuccess.classList.remove('hidden');
+            }
+
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('guest-name').value;
+                const email = document.getElementById('guest-email').value;
+                const count = document.getElementById('guest-count').value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                const message = document.getElementById('message').value;
+
+                const rsvpData = { name, email, count, attendance, message, date: new Date().toISOString() };
+                localStorage.setItem('serah_mathew_rsvp', JSON.stringify(rsvpData));
+
+                showGreetingModal(name, attendance);
+
+                rsvpForm.classList.add('hidden');
+                rsvpSuccess.classList.remove('hidden');
+            });
+
+            if (viewGreetingBtn) {
+                viewGreetingBtn.addEventListener('click', function() {
+                    const data = JSON.parse(localStorage.getItem('serah_mathew_rsvp') || '{}');
+                    showGreetingModal(data.name, data.attendance || 'accept');
+                });
+            }
+
+            closeGreetingModal.addEventListener('click', function() {
+                greetingModalCard.classList.remove('scale-100');
+                greetingModalCard.classList.add('scale-90');
+                setTimeout(() => {
+                    greetingModal.classList.add('hidden');
+                }, 200);
+            });
+
+            rsvpResetBtn.addEventListener('click', function() {
+                localStorage.removeItem('serah_mathew_rsvp');
+                rsvpSuccess.classList.add('hidden');
+                rsvpForm.classList.remove('hidden');
+            });
+
+            // --- 7. SCROLL REVEAL ANIMATIONS (WITH SCROLL CONTAINER SUPPORT) ---
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+            function handleScrollReveal() {
+                const containerRect = container ? container.getBoundingClientRect() : { top: 0, bottom: window.innerHeight };
+                const triggerBottom = containerRect.top + (container ? container.clientHeight : window.innerHeight) * 0.9;
+                
+                revealElements.forEach(el => {
+                    const top = el.getBoundingClientRect().top;
+                    if (top < triggerBottom) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+
+            if (container) {
+                container.addEventListener('scroll', handleScrollReveal);
+            }
+            window.addEventListener('scroll', handleScrollReveal);
+            handleScrollReveal();
+
+            // --- 9. SCRATCH CARD INTERACTIVE LOGIC ---
+            const scratchCanvas = document.getElementById('scratch-canvas');
+            const resetScratchBtn = document.getElementById('reset-scratch-btn');
+            const scratchPopup = document.getElementById('scratch-popup');
+            const scratchPopupCard = document.getElementById('scratch-popup-card');
+            const closeScratchPopup = document.getElementById('close-scratch-popup');
+            let popupShown = false;
+
+            if (scratchCanvas) {
+                const ctx = scratchCanvas.getContext('2d');
+                let isScratching = false;
+                let scratchedPercent = 0;
+
+                function initScratchCard() {
+                    popupShown = false;
+                    const rect = scratchCanvas.getBoundingClientRect();
+                    scratchCanvas.width = rect.width * (window.devicePixelRatio || 1);
+                    scratchCanvas.height = rect.height * (window.devicePixelRatio || 1);
+                    ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+
+                    const width = rect.width;
+                    const height = rect.height;
+
+                    const gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#E5989B');
+                    gradient.addColorStop(0.5, '#F7CAD0');
+                    gradient.addColorStop(1, '#89B0AE');
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(0, 0, width, height);
+
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.font = '600 12px "DM Sans", sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText('✨ SCRATCH HERE WITH FINGER OR MOUSE ✨', width / 2, height / 2);
+
+                    scratchCanvas.style.opacity = '1';
+                    scratchCanvas.style.pointerEvents = 'auto';
+                }
+
+                function triggerScratchPopup() {
+                    if (popupShown) return;
+                    popupShown = true;
+
+                    playCelebrationChime();
+
+                    scratchPopup.classList.remove('hidden');
+                    setTimeout(() => {
+                        scratchPopupCard.classList.remove('scale-90');
+                        scratchPopupCard.classList.add('scale-100');
+                    }, 50);
+
+                    startConfetti();
+                }
+
+                function getScratchPos(e) {
+                    const rect = scratchCanvas.getBoundingClientRect();
+                    let x, y;
+                    if (e.touches && e.touches[0]) {
+                        x = e.touches[0].clientX - rect.left;
+                        y = e.touches[0].clientY - rect.top;
+                    } else {
+                        x = e.clientX - rect.left;
+                        y = e.clientY - rect.top;
+                    }
+                    return { x, y };
+                }
+
+                function scratch(e) {
+                    if (!isScratching) return;
+                    e.preventDefault();
+                    const pos = getScratchPos(e);
+
+                    ctx.globalCompositeOperation = 'destination-out';
+                    ctx.beginPath();
+                    ctx.arc(pos.x, pos.y, 22, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    checkScratchProgress();
+                }
+
+                function checkScratchProgress() {
+                    const rect = scratchCanvas.getBoundingClientRect();
+                    const w = Math.floor(rect.width);
+                    const h = Math.floor(rect.height);
+                    if (w <= 0 || h <= 0) return;
+
+                    const imgData = ctx.getImageData(0, 0, w, h);
+                    let clearedPixels = 0;
+                    for (let i = 3; i < imgData.data.length; i += 16) {
+                        if (imgData.data[i] === 0) clearedPixels++;
+                    }
+
+                    const totalSampled = imgData.data.length / 16;
+                    scratchedPercent = (clearedPixels / totalSampled) * 100;
+
+                    if (scratchedPercent > 35) {
+                        scratchCanvas.style.opacity = '0';
+                        scratchCanvas.style.pointerEvents = 'none';
+                        triggerScratchPopup();
+                    }
+                }
+
+                scratchCanvas.addEventListener('mousedown', (e) => { isScratching = true; scratch(e); });
+                scratchCanvas.addEventListener('mousemove', scratch);
+                window.addEventListener('mouseup', () => { isScratching = false; });
+
+                scratchCanvas.addEventListener('touchstart', (e) => { isScratching = true; scratch(e); }, { passive: false });
+                scratchCanvas.addEventListener('touchmove', scratch, { passive: false });
+                window.addEventListener('touchend', () => { isScratching = false; });
+
+                if (resetScratchBtn) {
+                    resetScratchBtn.addEventListener('click', () => {
+                        ctx.globalCompositeOperation = 'source-over';
+                        initScratchCard();
+                    });
+                }
+
+                if (closeScratchPopup) {
+                    closeScratchPopup.addEventListener('click', () => {
+                        scratchPopupCard.classList.remove('scale-100');
+                        scratchPopupCard.classList.add('scale-90');
+                        setTimeout(() => {
+                            scratchPopup.classList.add('hidden');
+                        }, 200);
+                    });
+                }
+
+                window.addEventListener('resize', initScratchCard);
+                setTimeout(initScratchCard, 200);
+            }
+
+            // --- 10. CONFETTI & CHIME SOUND EFFECTS ---
+            function playCelebrationChime() {
+                if (!audioCtx) initAudioSynthesizer();
+                if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+
+                const chord = [523.25, 659.25, 783.99, 1046.50];
+                chord.forEach((freq, idx) => {
+                    setTimeout(() => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+                        gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                        gain.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 0.05);
+                        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start();
+                        osc.stop(audioCtx.currentTime + 1.3);
+                    }, idx * 120);
+                });
+            }
+
+            function startConfetti() {
+                const cCanvas = document.getElementById('confetti-canvas');
+                if (!cCanvas) return;
+                const cCtx = cCanvas.getContext('2d');
+                cCanvas.width = window.innerWidth;
+                cCanvas.height = window.innerHeight;
+
+                const particles = [];
+                const colors = ['#E5989B', '#F7CAD0', '#89B0AE', '#BEE1E6', '#FFF0F3'];
+
+                for (let i = 0; i < 70; i++) {
+                    particles.push({
+                        x: Math.random() * cCanvas.width,
+                        y: Math.random() * cCanvas.height - cCanvas.height,
+                        r: Math.random() * 6 + 4,
+                        d: Math.random() * 30 + 10,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        tilt: Math.floor(Math.random() * 10) - 10,
+                        tiltAngleIncremental: Math.random() * 0.07 + 0.05,
+                        tiltAngle: 0
+                    });
+                }
+
+                let animationFrameId;
+                function drawConfetti() {
+                    cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
+                    particles.forEach((p) => {
+                        p.tiltAngle += p.tiltAngleIncremental;
+                        p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                        p.x += Math.sin(p.d);
+                        p.tilt = Math.sin(p.tiltAngle) * 15;
+
+                        cCtx.beginPath();
+                        cCtx.lineWidth = p.r;
+                        cCtx.strokeStyle = p.color;
+                        cCtx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                        cCtx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                        cCtx.stroke();
+                    });
+
+                    if (scratchPopup.classList.contains('hidden')) {
+                        cancelAnimationFrame(animationFrameId);
+                    } else {
+                        animationFrameId = requestAnimationFrame(drawConfetti);
+                    }
+                }
+                drawConfetti();
+            }
+
+            // --- 8. WEB AUDIO API ROMANTIC MELODY SYNTHESIZER ---
+            let audioCtx = null;
+            let isPlaying = false;
+            let melodyInterval = null;
+
+            const musicBtn = document.getElementById('music-toggle-btn');
+            const musicText = document.getElementById('music-text');
+            const musicPing = document.getElementById('music-ping');
+            const musicDot = document.getElementById('music-dot');
+
+            function initAudioSynthesizer() {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+
+            const notes = [174.61, 220.00, 261.63, 329.63, 349.23, 440.00, 523.25];
+
+            function playGentleNote() {
+                if (!audioCtx || !isPlaying) return;
+
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                const note = notes[Math.floor(Math.random() * notes.length)];
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(note, audioCtx.currentTime);
+
+                gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 0.3);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.5);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 2.6);
+            }
+
+            function toggleMusic(forceState) {
+                isPlaying = forceState !== undefined ? forceState : !isPlaying;
+
+                if (isPlaying) {
+                    if (audioCtx && audioCtx.state === 'suspended') {
+                        audioCtx.resume();
+                    }
+                    musicText.innerText = 'Music On';
+                    musicPing.classList.remove('hidden');
+                    musicDot.classList.remove('bg-sage-soft');
+                    musicDot.classList.add('bg-pink-deep');
+
+                    if (!melodyInterval) {
+                        playGentleNote();
+                        melodyInterval = setInterval(playGentleNote, 1400);
+                    }
+                } else {
+                    musicText.innerText = 'Music Off';
+                    musicPing.classList.add('hidden');
+                    musicDot.classList.remove('bg-pink-deep');
+                    musicDot.classList.add('bg-sage-soft');
+
+                    if (melodyInterval) {
+                        clearInterval(melodyInterval);
+                        melodyInterval = null;
+                    }
+                }
+            }
+
+            musicBtn.addEventListener('click', function() {
+                if (!audioCtx) initAudioSynthesizer();
+                toggleMusic();
+            });
+        });
+    </script>
+</body>
+</html>
